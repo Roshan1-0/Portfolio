@@ -1,0 +1,234 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  padding: 1.5rem var(--space-xl);
+  opacity: 0;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.2em;
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  padding: 0;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navbar-logo:hover { opacity: 0.7; }
+
+.navbar-logo-bracket {
+  color: var(--text-tertiary);
+}
+
+/* Desktop links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.navbar-link {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  padding: 0;
+  position: relative;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accent-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: var(--text-primary);
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-resume {
+  color: var(--accent-gold);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-resume:hover { opacity: 0.7; }
+
+/* Hamburger */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  background: none;
+  border: none;
+  width: 28px;
+}
+
+.navbar-hamburger-line {
+  display: block;
+  height: 1px;
+  background: var(--text-secondary);
+  transition: all 0.35s ease;
+  transform-origin: center;
+}
+
+.navbar-hamburger--open .navbar-hamburger-line:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.navbar-hamburger--open .navbar-hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar-hamburger--open .navbar-hamburger-line:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* ── Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 490;
+  background: rgba(8, 8, 8, 0.97);
+  backdrop-filter: blur(30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding: 0 var(--space-xl);
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  text-align: left;
+  transition: padding-left 0.3s ease;
+}
+
+.mobile-menu-item:hover {
+  padding-left: 0.5rem;
+}
+
+.mobile-menu-num {
+  color: var(--text-tertiary);
+  width: 2rem;
+  flex-shrink: 0;
+}
+
+.mobile-menu-label {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  flex: 1;
+}
+
+.mobile-menu-arrow {
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-item:hover .mobile-menu-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-menu-resume {
+  margin-top: 2rem;
+  color: var(--accent-gold);
+  display: inline-block;
+}
+
+/* ── Responsive */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 1.25rem var(--space-xl);
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+}

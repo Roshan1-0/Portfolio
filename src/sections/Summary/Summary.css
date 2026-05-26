@@ -1,0 +1,176 @@
+.summary {
+  position: relative;
+  z-index: 10;
+}
+
+.summary-header {
+  margin-bottom: 5rem;
+  opacity: 0;
+}
+
+.summary-chapter {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent-gold);
+}
+
+.summary-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.summary-title-accent {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(200, 169, 126, 0.4);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Bio */
+.summary-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.summary-bio-para {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  opacity: 0;
+}
+
+.summary-bio-para:first-child {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.summary-objective {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-subtle);
+  border-left: 2px solid var(--accent-gold);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.summary-objective .text-label {
+  color: var(--accent-gold);
+}
+
+.summary-objective-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Aside */
+.summary-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: sticky;
+  top: 6rem;
+}
+
+/* Philosophy */
+.summary-philosophy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-philosophy-label {
+  color: var(--text-tertiary);
+}
+
+.summary-philosophy-quote {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+  font-style: normal;
+}
+
+.summary-philosophy-mark {
+  color: var(--accent-gold);
+  font-size: 1.8rem;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 0.1em;
+}
+
+.summary-philo-word {
+  display: inline-block;
+  opacity: 0;
+}
+
+/* Stats */
+.summary-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.summary-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color 0.3s ease;
+}
+
+.summary-stat:hover {
+  border-color: var(--border-card);
+}
+
+.summary-stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.summary-stat-label {
+  color: var(--text-tertiary);
+}
+
+.summary-divider {
+  margin-top: 6rem;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+@media (max-width: 1024px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .summary-aside {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+}

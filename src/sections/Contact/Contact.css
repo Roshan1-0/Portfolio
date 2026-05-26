@@ -1,0 +1,298 @@
+.contact {
+  position: relative;
+  z-index: 10;
+  padding-bottom: 0;
+}
+
+.contact-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(200, 169, 126, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-header {
+  margin-bottom: 5rem;
+  opacity: 0;
+}
+
+.contact-chapter {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent-gold);
+}
+
+.contact-title {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.contact-title-accent {
+  color: var(--accent-gold);
+}
+
+.contact-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* Layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 6rem;
+  align-items: start;
+  margin-bottom: 6rem;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  opacity: 0;
+}
+
+.contact-label {
+  color: var(--text-tertiary);
+  transition: color 0.3s ease;
+}
+
+.contact-form-field:focus-within .contact-label {
+  color: var(--accent-gold);
+}
+
+.contact-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.75rem 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+  caret-color: var(--accent-gold);
+}
+
+.contact-input::placeholder {
+  color: var(--text-tertiary);
+  font-weight: 300;
+}
+
+.contact-input:focus {
+  border-bottom-color: var(--accent-gold);
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  align-self: flex-start;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid var(--accent-gold);
+  border-radius: var(--radius-full);
+  color: var(--accent-gold);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+  z-index: 0;
+}
+
+.contact-submit:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-submit:hover {
+  color: #080808;
+  box-shadow: 0 0 30px rgba(200, 169, 126, 0.2);
+}
+
+.contact-submit-text,
+.contact-submit-arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-submit:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Success state */
+.contact-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 3rem;
+  background: rgba(126, 200, 169, 0.04);
+  border: 1px solid rgba(126, 200, 169, 0.15);
+  border-radius: var(--radius-xl);
+}
+
+.contact-success-icon {
+  font-size: 2rem;
+  color: #7ec8a9;
+}
+
+.contact-success-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.contact-success-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-info-label {
+  color: var(--text-tertiary);
+}
+
+.contact-info-value {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.contact-info-value:hover {
+  color: var(--accent-gold);
+}
+
+/* Availability indicator */
+.contact-availability {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: rgba(126, 200, 169, 0.04);
+  border: 1px solid rgba(126, 200, 169, 0.15);
+  border-radius: var(--radius-md);
+  margin-top: 0.5rem;
+}
+
+.contact-avail-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7ec8a9;
+  flex-shrink: 0;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+  box-shadow: 0 0 8px #7ec8a9;
+}
+
+.contact-avail-text {
+  color: #7ec8a9;
+}
+
+/* Footer */
+.contact-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 3rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-footer-name {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.2em;
+}
+
+.contact-footer-year {
+  color: var(--text-tertiary);
+}
+
+.contact-footer-note {
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .contact-footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

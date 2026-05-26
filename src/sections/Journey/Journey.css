@@ -1,0 +1,151 @@
+.journey {
+  position: relative;
+  z-index: 10;
+}
+
+.journey-header {
+  margin-bottom: 5rem;
+  opacity: 0;
+}
+
+.journey-chapter {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent-gold);
+}
+
+.journey-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.journey-title-accent {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(126, 200, 169, 0.4);
+}
+
+/* Timeline */
+.journey-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2px 1fr;
+  gap: 0 3rem;
+  max-width: 800px;
+}
+
+.journey-line-wrap {
+  position: relative;
+  height: 100%;
+}
+
+.journey-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent-gold), var(--accent-blue), var(--text-mono));
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+.journey-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.journey-item {
+  position: relative;
+  padding: 0 0 3.5rem 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.journey-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot */
+.journey-dot {
+  position: absolute;
+  left: -3.4rem;
+  top: 0.6rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* Content */
+.journey-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.journey-content-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.journey-year {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+.journey-type {
+  color: var(--text-tertiary);
+  text-transform: capitalize;
+}
+
+.journey-item-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.journey-item-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+.journey-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.journey-tag {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid;
+  border-radius: var(--radius-full);
+  opacity: 0.8;
+}
+
+.journey-divider {
+  margin-top: 6rem;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+@media (max-width: 768px) {
+  .journey-timeline {
+    grid-template-columns: 2px 1fr;
+    gap: 0 2rem;
+  }
+
+  .journey-dot {
+    left: -2.55rem;
+  }
+}
