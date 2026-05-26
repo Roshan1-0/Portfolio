@@ -125,7 +125,7 @@ export const projects = [
     tech: ['JavaScript', 'HTML', 'CSS', 'Animations'],
     category: 'Frontend',
     github: 'https://github.com/Roshan1-0/RoshPort',
-    live: null,
+    live: 'https://roshport.vercel.app/',
     year: '2026',
     status: 'Archived',
     architecture: 'Vanilla JS with custom animation system and modular CSS architecture.',

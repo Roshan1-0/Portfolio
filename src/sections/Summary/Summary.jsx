@@ -105,11 +105,11 @@ export default function Summary() {
               <span className="text-label summary-philosophy-label">Philosophy</span>
               <blockquote className="summary-philosophy-quote">
                 <span className="summary-philosophy-mark">"</span>
-                {philosophyWords.map((word, i) => (
-                  <span key={i} className="summary-philo-word">
-                    {word}{' '}
-                  </span>
-                ))}
+{philosophyWords.map((word, i) => (
+  <span key={i} className="summary-philo-word">
+    {word}&nbsp;
+  </span>
+))}
                 <span className="summary-philosophy-mark">"</span>
               </blockquote>
             </div>
