@@ -7,7 +7,7 @@ import './Projects.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const categories = ['All', 'Full Stack', 'AI / ML', 'Frontend', 'Cloud'];
+const categories = ['All', 'Full Stack', 'AI / ML', 'Frontend', 'Systems', 'Cloud'];
 
 function ProjectCard({ project, index, onClick }) {
   const cardRef = useRef(null);

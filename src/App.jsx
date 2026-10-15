@@ -21,6 +21,7 @@ import Summary from './sections/Summary/Summary';
 import Skills from './sections/Skills/Skills';
 import Projects from './sections/Projects/Projects';
 import Journey from './sections/Journey/Journey';
+import Certifications from './sections/Certifications/Certifications';
 import Contact from './sections/Contact/Contact';
 
 export default function App() {
@@ -79,6 +80,7 @@ export default function App() {
           <Skills />
           <Projects />
           <Journey />
+          <Certifications />
           <Contact />
         </main>
       </div>

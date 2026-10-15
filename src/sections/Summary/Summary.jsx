@@ -117,7 +117,7 @@ export default function Summary() {
             {/* Mini stats */}
             <div className="summary-stats">
               {[
-                { label: 'Projects', value: '4+' },
+                { label: 'Projects', value: '8+' },
                 { label: 'Languages', value: '6+' },
                 { label: 'Frameworks', value: '8+' },
                 { label: 'Focus', value: 'Full Stack' },

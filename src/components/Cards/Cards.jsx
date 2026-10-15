@@ -30,8 +30,8 @@ const chapters = [
     number: '03',
     chapter: 'What I Build',
     title: 'Selected Projects',
-    summary: 'Four engineering case studies — from AI ad intelligence to real-time collaboration platforms.',
-    meta: 'Harmony · ArciADV · RoshPort',
+    summary: 'Engineering case studies across enterprise full-stack systems, compilers, AI tooling, and interactive apps.',
+    meta: 'Mini ERP · Lightango · Harmony · ResumeGEN',
     color: '#9b8ac8',
   },
   {
